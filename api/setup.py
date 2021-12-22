@@ -26,7 +26,6 @@ install_requires = [
     'aioredis==2.0.0',
     'trafaret==2.1.0',
     'PyYAML==6.0',
-    'gunicorn==19.9.0',
 ]
 
 
