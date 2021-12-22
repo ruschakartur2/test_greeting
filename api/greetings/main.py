@@ -1,10 +1,9 @@
 import asyncio
 import logging
 import pathlib
-
 import aioredis
 from aiohttp import web
-
+from aiohttp_middlewares import cors_middleware
 from api.greetings.routes import setup_routes
 from api.greetings.utils import load_config
 from api.greetings.views import GreetHandler
@@ -20,7 +19,16 @@ async def setup_redis():
 async def init(loop):
     conf = load_config(PROJ_ROOT / 'config' / 'config.yml')
 
-    app = web.Application()
+    app = web.Application(middlewares=[
+        cors_middleware(
+            allow_all=True,
+            origins='*',
+            # urls=[re.compile(r"^\/api")],
+            allow_credentials=True,
+            expose_headers="*",
+            allow_headers='*',
+            allow_methods=["POST", "PATCH", 'GET', 'OPTION'],
+        )])
     redis_pool = await setup_redis()
 
     handler = GreetHandler(redis_pool, conf)

@@ -7,7 +7,7 @@ services:
         hostname: redis
         image: redis:rc-alpine3.11
 
-    back:
+    api:
         build: api
         volumes:
             - ./:/app
@@ -17,3 +17,16 @@ services:
         depends_on:
             -  redis
         restart: on-failure
+
+    front:
+        build:
+            context: front
+            dockerfile: Dockerfile
+        stdin_open: true
+        volumes:
+            - ./front:/front
+            - ./front/node_modules:/front/node_modules
+        ports:
+            - 3000:3000
+        environment:
+            - CHOKIDAR_USEPOLLING=true
