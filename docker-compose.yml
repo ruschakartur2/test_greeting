@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+    redis:
+        restart: always
+        hostname: redis
+        image: redis:rc-alpine3.11
+
+    back:
+        build: api
+        volumes:
+            - ./:/app
+        command: python3 -m api.greetings
+        ports:
+            - "8080:8080"
+        depends_on:
+            -  redis
+        restart: on-failure
