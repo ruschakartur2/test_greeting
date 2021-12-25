@@ -12,7 +12,7 @@ const GreetsList = () => {
             .catch((e)=> {
                 setError('Sorry, ' + e.message)
             })
-    }, [1])
+    }, [])
     return (
         <div className={"greet-list"}>
             {greetedList && (<h3>З нами вже привітались: </h3>) && greetedList.length >= 1 ? greetedList.map((name, key)=>(
