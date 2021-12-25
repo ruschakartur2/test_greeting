@@ -22,9 +22,10 @@ Requirements
 * aioredis_
 * trafaret_
 * PyYAML_
-
+* aiohttp-middlewares_
 .. _Python: https://www.python.org
 .. _aiohttp: https://github.com/KeepSafe/aiohttp
 .. _aioredis: https://aioredis.readthedocs.io/en/latest/
 .. _trafaret: https://trafaret.readthedocs.io/en/latest/intro.html
 .. _PyYAML: https://pyyaml.org/
+.. _aiohttp-middlewares: https://pypi.org/project/aiohttp-middlewares/

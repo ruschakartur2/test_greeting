@@ -14,6 +14,9 @@ const Greet = () => {
             .then((res)=>{
                 setAnswer(res.data.message)
             })
+            .catch((e)=>{
+                setAnswer(e.message);
+            })
     }
     return (
         <div>

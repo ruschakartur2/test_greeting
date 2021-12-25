@@ -31,3 +31,14 @@
 .greet-form input {
     padding:5px 10px;
 }
+.greet-list {
+
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: N; /* number of lines to show */
+   line-height: 2rem;        /* fallback */
+   max-height: 100rem;       /* fallback */
+
+}

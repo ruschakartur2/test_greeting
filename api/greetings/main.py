@@ -23,7 +23,6 @@ async def init(loop):
         cors_middleware(
             allow_all=True,
             origins='*',
-            # urls=[re.compile(r"^\/api")],
             allow_credentials=True,
             expose_headers="*",
             allow_headers='*',
@@ -43,7 +42,7 @@ def main():
 
     loop = asyncio.get_event_loop()
     app, host, port = loop.run_until_complete(init(loop))
-    web.run_app(app, host=host, port=port)
+    web.run_app(app)
 
 
 if __name__ == "__main__":
