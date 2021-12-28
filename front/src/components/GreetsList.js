@@ -7,7 +7,7 @@ const GreetsList = () => {
     const [error, setError] = useState('З нами ще ніхто не привітався');
 
     useEffect(()=>{
-        axios.get('http://0.0.0.0:8080/greeted_names')
+        axios.get('http://137.184.139.64:8080/greeted_names')
             .then((res)=>{
                 setGreetedList(res.data)
         })

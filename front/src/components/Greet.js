@@ -15,7 +15,7 @@ const Greet = () => {
 
     const handleGreet = (e) => {
         e.preventDefault();
-        axios.post('http://0.0.0.0:8080/greet', {'name': name})
+        axios.post('http://137.184.139.64:8080/greet', {'name': name})
             .then((res)=>{
                 setAnswer(res.data.message)
             })
