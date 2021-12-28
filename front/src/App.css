@@ -4,13 +4,27 @@
 }
 .center {
     text-align:center;
+    padding:3vh;
+}
+.center a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    padding:3vh;
+    margin-top: 3vh;
+}
+
+.container {
+    max-width:1380px;
+    margin:0 auto;
+    display: block;
 }
 
 .greet-block {
     display: block;
     margin: 0 auto;
     padding:20px;
-    background-color: blanchedalmond;
+    background-color: whitesmoke;
     text-align:center;
     max-width:400px;
     margin-top: 10vh;
@@ -32,13 +46,9 @@
     padding:5px 10px;
 }
 .greet-list {
-
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: N; /* number of lines to show */
-   line-height: 2rem;        /* fallback */
-   max-height: 100rem;       /* fallback */
-
+    text-align:center;
+}
+.greet-list a {
+    text-decoration: none;
+    color:orangered;
 }

@@ -19,8 +19,9 @@ const Greet = () => {
             })
     }
     return (
-        <div>
-            <Link to={"list"}>З нами вже привітались</Link>
+        <div className={"center"}>
+
+        <Link to={"list"}>З нами вже привітались</Link>
         <div className={"greet-block"}>
             <form className={"greet-form"} action="" onSubmit={handleGreet}>
             <input type="text" value={name} onChange={handleName}/>
