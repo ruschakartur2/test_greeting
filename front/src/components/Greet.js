@@ -5,9 +5,14 @@ import {Link} from "react-router-dom";
 const Greet = () => {
     const [answer,setAnswer] = useState('')
     const [name, setName] = useState('')
-    const handleName = (e) => {
-        setName(e.target.value)
-    }
+
+
+    const onChangeName = (e) => {
+        let  name = e.target.value;
+        name = name.replace(/[^A-Za-zwА-Яа-яІЄЇ ]+/ig, '')
+        setName(name);
+    };
+
     const handleGreet = (e) => {
         e.preventDefault();
         axios.post('http://0.0.0.0:8080/greet', {'name': name})
@@ -24,7 +29,10 @@ const Greet = () => {
         <Link to={"list"}>З нами вже привітались</Link>
         <div className={"greet-block"}>
             <form className={"greet-form"} action="" onSubmit={handleGreet}>
-            <input type="text" value={name} onChange={handleName}/>
+            <input type="text"
+                   value={name}
+                   required={true}
+                   onChange={onChangeName}/>
              <button type={"submit"}>Привітатись</button>
             </form>
             {answer}
